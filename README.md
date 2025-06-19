@@ -11,6 +11,33 @@ It's designed to demonstrate:
 - Real-time data polling and meaningful background notifications
 
 ---
+## Candidate notes
+
+Due to requested time constraints, a subset of the described functionality could be completed
+- Material 3 Compose UI with 
+-- METAR and flight rules data display for selected ICAOs
+-- Add/remove for ICAOs
+- MVVM and Clean architecture
+- KTOR for network interaction
+- Room storage for user-selected ICAOs
+- Hilt for DI
+
+Some items were not completed
+- Workmanager integration
+- Full METAR and TAF detail screens
+- TAF summary
+- SIGMET and AIRMET live monitoring
+
+### Setup/Build notes
+  No additional setup is necessary beyond standard setup in Android studio.  This app has been tested on API 36.  It may have issues with Android 7 due to networking security measures.
+
+  The app starts with no data, but example codes include KPHX, KSFO, and KLAX.  The only validation is for length, so invalid 4 letter combinations will show no data without an error message.
+
+### Notes on implementation
+Additional work would be needed to identify or track down some missing fields in the transformer, which for example leaves the flight rules as "UNKNOWN" in all cases.  I have the mechanism to read TAF from the API but it is not used in this iteration.
+I mostly started at the data layer and moved up, so there are more tests at that level.  Some work was done to move strings into a resource file along with other production-friendly actions, but this effort is incomplete.  I also had a number of plans for final clean up were left incomplete including moving further logic into the domain layer. Complications involving Workmanager interaction with Hilt ate up remaining time, so no further features were added. 
+
+-- END candidate notes
 
 ## Technologies Used
 - **Kotlin**

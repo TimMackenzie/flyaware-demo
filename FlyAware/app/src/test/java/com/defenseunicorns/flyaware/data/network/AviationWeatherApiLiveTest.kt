@@ -42,6 +42,15 @@ class AviationWeatherApiLiveTest {
     }
 
     @Test
+    fun `getMetar retrieves live METAR data for multiple sites`() = runBlocking {
+        val metars = api.getMetar(listOf("KSFO", "KPHX"))
+        assertThat(metars).isNotEmpty()
+        assertThat(metars.first().metarId).isNotNull()
+        assertThat(metars.size).isEqualTo(2)
+        println("Live METAR: ${metars}")
+    }
+
+    @Test
     fun `getTaf retrieves live TAF data`() = runBlocking {
         val tafs = api.getTaf("KSFO")
         assertThat(tafs).isNotEmpty()

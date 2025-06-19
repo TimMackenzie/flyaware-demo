@@ -9,4 +9,5 @@
     <string name="card_delete_message">Are you sure you want to delete %1$s?</string>
     <string name="card_delete_confirm">Delete</string>
     <string name="card_delete_cancel">Cancel</string>
+    <string name="start_message_empty">Click the + to add an ICAO and begin</string>
 </resources>
