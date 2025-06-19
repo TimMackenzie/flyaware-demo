@@ -1,26 +1,28 @@
 [versions]
-agp = "8.9.3"
+agp = "8.10.1"
 kotlin = "2.1.21"
 coreKtx = "1.16.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
-lifecycleRuntimeKtx = "2.9.0"
+lifecycleRuntimeKtx = "2.9.1"
 activityCompose = "1.10.1"
-composeBom = "2025.05.01"
+composeBom = "2025.06.00"
 hilt = "2.55"
 hiltNavCompose = "1.2.0"
 hiltCommon = "1.2.0"
 ktor = "3.1.3"
 room = "2.7.1"
 datastore = "1.1.7"
-workManager = "2.10.1"
+slf4jSimple = "2.0.9"
+workManager = "2.10.2"
 coroutines = "1.10.2"
-lifecycle = "2.9.0"
+lifecycle = "2.9.1"
 navigation = "2.9.0"
 coil = "2.5.0"
 mockk = "1.13.9"
 kotlinx-serialization = "1.8.1"
+truth = "1.4.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -45,12 +47,12 @@ hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-com
 androidx-hilt-common = { group = "androidx.hilt", name = "hilt-common", version.ref = "hiltCommon" }
 
 # Ktor - Networking
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
 ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
 ktor-client-android = { group = "io.ktor", name = "ktor-client-android", version.ref = "ktor" }
 ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
 ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor" }
 ktor-serialization-kotlinx-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
-ktor-client-serialization = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
 
 # Serialization
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
@@ -64,6 +66,7 @@ room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
 
 # WorkManager - Background Processing
+slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4jSimple" }
 workmanager = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "workManager" }
 workmanager-hilt = { group = "androidx.hilt", name = "hilt-work", version.ref = "hiltNavCompose" }
 
@@ -86,6 +89,8 @@ coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coi
 # Testing
 mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
 mockk-android = { group = "io.mockk", name = "mockk-android", version.ref = "mockk" }
+truth = { module = "com.google.truth:truth", version.ref = "truth" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
