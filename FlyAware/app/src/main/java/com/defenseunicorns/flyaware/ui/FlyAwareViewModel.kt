@@ -6,6 +6,10 @@ import com.defenseunicorns.flyaware.data.local.IcaoDao
 import com.defenseunicorns.flyaware.data.local.IcaoEntity
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -24,4 +28,8 @@ class FlyAwareViewModel @Inject constructor(
             }
         }
     }
+
+    val icaoCodes: StateFlow<List<String>> = icaoDao.observeAll()
+        .map { list -> list.map { it.icao } }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 }

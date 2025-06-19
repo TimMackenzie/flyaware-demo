@@ -1,6 +1,7 @@
 package com.defenseunicorns.flyaware.data.local
 
 import androidx.room.*
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface IcaoDao {
@@ -13,4 +14,7 @@ interface IcaoDao {
 
     @Query("SELECT * FROM icao_table")
     suspend fun getAll(): List<IcaoEntity>
+
+    @Query("SELECT * FROM icao_table")
+    fun observeAll(): Flow<List<IcaoEntity>>
 }

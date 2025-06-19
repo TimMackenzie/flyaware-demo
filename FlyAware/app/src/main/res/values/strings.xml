@@ -5,4 +5,8 @@
     <string name="dialog_cancel">Cancel</string>
     <string name="dialog_confirm">Add</string>
     <string name="error_invalid_icao_length">ICAO code must be exactly 4 characters long</string>
+    <string name="card_delete_title">Delete ICAO</string>
+    <string name="card_delete_message">Are you sure you want to delete %1$s?</string>
+    <string name="card_delete_confirm">Delete</string>
+    <string name="card_delete_cancel">Cancel</string>
 </resources>
